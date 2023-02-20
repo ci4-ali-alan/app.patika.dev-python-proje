@@ -1,0 +1,12 @@
+def liste_duzlestirme(liste):
+ flattened = []
+ for item in liste:
+  if isinstance(item, liste):
+    flattened.extend(liste_duzlestirme(item))
+  else:
+    flattened.append(item)
+    return flattened
+    
+    
+liste = [[1,'a',['cat'],2],[[[3]],'dog'],4,5]
+print(liste_duzlestirme(liste))
